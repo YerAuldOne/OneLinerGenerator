@@ -39,6 +39,12 @@ p
 	text-align: center;
 	font-family: myFont;
 }
+.responsive {
+  width: 100%;
+  height: auto;
+  max-height: 24px;
+  max-width: 24px;
+}
 .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited 
 {
     background-color: black !important;
