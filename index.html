@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content=""> 
+  <!--<link rel="shortcut icon" type="image/png" href="img/favicon.png">-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  
+  <title>One Liner Generator</title>
+  <script>
+  <!-- Word Pool -->
+    var verbs, nouns, adjectives, adverbs, preposition;
+            things = ["napalm", "choppah", "gasoline", "gunpowder", "zombies", "blood", "freshly cut grass", "death", "bullets", "Machine Guns"];
+			times = ["morning", "nighttime", "evening", "winter", "summer", "witching hour", "spring", "winter", "midnight hour", "afternoon"];
+			relation = ["mammy", "daddy", "son", "third cousin twice removed", "parents", "sensei", "auld one", "daughter", "hamster", "dog"];
+			pluralthings = ["birds","snakes","englishmen","ducks","bananas","paedophiles","dogs","BEEEEEEE's","beurocrats","manbuns"];
+			vehicles = ["plane","car","choppa","bicycle","segway","spaceship","batmobile","popemobile","boat","international space station"];
+			thirdpersonverb = ["bleeds", "lives", "dies", "shoots", "smells", "laughs", "loves", "claps", "eats", "drinks"];
+            verbspast = ["dropkicked", "killed", "seduced", "donkey punched", "decapitated", "shot", "impregnated", "loved", "abandoned", "f***ed"];
+			verbspresent = ["dropkick", "kill", "seduce", "uppercut punch", "decapitate", "shoot", "impregnate", "love", "abandon", "f***"];
+			action = ["chew bubble gum", "kick ass", "get to the choppa", "kill sons of bitches", "slappa da bass", "shred the geetar", "eat candy", "shoot gun's", "play some vidya", "eat popcorn"];
+            adjectives = ["motherf***ing", "damned", "sexy", "bloody", "dumb", "stupid ass", "mothalovin'", "ugly", "dead ass", "f***ing"];
+			firstname = ["John","Dutch","Ash","Neo","Johnny","Billy","Conan","Snake","Wolf","Maverick"];
+			secondname = ["McClane","Windu","Solo","Bourne","Ripley","Rambo","Drago","Bond","Pliskin","Wick"];
+			scenario = ["[Staring into the abyss]","[Sewing open wound on arm]","[Pulling out a grenade]","[Walking away from an explosion]",
+			"[Firing guns while screaming]","[Doing a manly handshake]","[Hand on his holstered gun]","[Cocking Shotgun]","[Cocaine all over face]",
+			"[Cigarette in mouth]"];
+			
+			<!-- -->
+            function sentence() {
+			var structurechoose = Math.floor(Math.random() * 6);
+            var rand1 = Math.floor(Math.random() * 10);
+            var rand2 = Math.floor(Math.random() * 10);
+            var rand3 = Math.floor(Math.random() * 10);
+            var rand4 = Math.floor(Math.random() * 10);
+            var rand5 = Math.floor(Math.random() * 10);
+            var rand6 = Math.floor(Math.random() * 10);
+     		var content1 = "";
+			var scenario1 = scenario[rand1];
+			var name1 = firstname[rand1];
+			var name2 = secondname[rand2];
+			
+			<!-- Choose preset sentence -->
+			switch(structurechoose)
+			{
+				case 0:
+					var content1 = "I've had it with these "+ adjectives[rand1] + " " + pluralthings[rand2] + " on this " +adjectives[rand1]+ " " + vehicles[rand3];
+					break;
+				case 1:
+					var content1 = "Hello. My name is "+name1+ " " +name2+ ". You "+verbspast[rand1]+" my "+relation[rand3]+". Prepare to Die.";
+					break;
+				case 2:
+					var content1 = "I love the smell of "+things[rand1]+ " in the "+times[rand2];
+					break;
+				case 3:
+					var n = action[rand1].split(" ").splice(-1)[0];
+					console.log(action[rand1].split(" ").splice(-1)[0]);
+					var content1 = "I came here to "+action[rand1]+" and "+action[rand2]+". And I'm all outta "+n;
+					break;
+				case 4:
+					var content1 = "I will "+verbspresent[rand1]+" you. I will "+verbspresent[rand2]+ " you, and I will " +verbspresent[rand3]+" you.";
+					break;
+				case 5:
+					var content1 = "If it "+thirdpersonverb[rand2]+", we can "+verbspresent[rand1]+" it.";
+			}
+			
+			<!-- Insert words into html -->
+			document.getElementById('name').innerHTML = name1 + " " + name2 +":";
+			document.getElementById('scenario').innerHTML = scenario1;
+            document.getElementById('sentence').innerHTML = "&quot;" + content1 + "&quot;";
+            };
+            sentence();
+  </script>
+</head>
+
+<body>
+<div style = "background-color : black !important ;"class="jumbotron" align="center">
+	<h1 style= "color: white; font-family: myFont;">Random One Liner Generator</h1>
+</div>
+<div>
+<br/>
+	<img src="punchhole.png" width="42" height="42" align="left">
+	<button type="button" class="btn btn-primary btn-xlarge" onclick="sentence()">Generate One Liner</button>
+	<br/>
+	<br/>
+	<br/>
+	<h2 id="name"></h2>
+	<h3 id="scenario"></h3>
+	<br/>
+	<h4 id="sentence"></h3>
+	</br>
+	<div style="position: relative">
+		<img style="position: fixed; left: 0; bottom: 50px;" src="punchhole.png" width="42" height="42">
+		<p style="position: fixed; bottom: 0; width:100%;">Jason Hanratty ©</p>
+	</div>
+</div>
+</body>
+</html>

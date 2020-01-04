@@ -1,0 +1,62 @@
+@font-face 
+{
+    font-family: "myFont";
+    src: url("momstypewriter.ttf");
+}
+
+body {
+  background-color: white;
+  background: url(beige-paper.png) repeat top left;
+}
+
+div 
+{
+	text-align: center;
+}
+
+h2 {
+  text-align: center;
+  font-size: 4vw;
+  color: black;
+  font-family: myFont;
+}
+h3 {
+  text-align: center;
+  font-size: 3vw;
+  color: black;
+  font-family: myFont;
+}
+h4 {
+  text-align: center;
+  font-size: 3vw;
+  color: black;
+  font-family: myFont;
+}
+p
+{
+	color: black;
+	font-size: 1vw;
+	text-align: center;
+	font-family: myFont;
+}
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited 
+{
+    background-color: black !important;
+	color:white !important;
+	font-family: myFont;
+}
+.btn-xlarge {
+    padding: 18px 28px;
+    font-size: 22px; //change this to your desired size
+    line-height: normal;
+    -webkit-border-radius: 8px;
+       -moz-border-radius: 8px;
+            border-radius: 8px;
+}
+/*
+#E84A5F red
+#2A363B black
+#FF847C dark salmon
+#FECEA8 light salmon
+#99B898 green
+*/
